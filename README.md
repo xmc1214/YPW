@@ -66,5 +66,7 @@
 
 > 用户中心和个人主页设计
 ![用户中心和个人主页](http://wx3.sinaimg.cn/mw690/006UdlVNgy1g4gkayqgcdj30j40g9gs4.jpg)
+## 演示链接
+[演示视频链接](https://pan.baidu.com/s/1sI8qcxQ45N1cytAE0qrHng 提取码：i7d5)
 ## 后续更新
 后续将完善智能推荐约拍对象的推荐算法，以及约拍对象的自动评分功能，提供更加智能化的约拍服务
