@@ -1,0 +1,4 @@
+/* pages/index/pickYou/pickYou.wxss */
+.cu-list.menu>.cu-item{
+  justify-content:right;
+}

@@ -1,0 +1,54 @@
+<!--pages/index/pickYou/pickYou.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我要约拍</view>
+</cu-custom>
+
+<view class=' padding flex flex-direction'>
+  <view class='weui-cells weui-cells_after-title '>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" style="height: 6em" placeholder='备注信息' bindinput='check' value='{{ypRequestInfo.explain}}' />
+        <view class="weui-textarea-counter">{{currentNumber}}/{{max}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-list menu sm-border card-menu ">
+  <view class="cu-item  margin-top">
+    <view class="action">
+      <text class="icon-title text-blue "></text> 以下信息为选填
+    </view>
+  </view>
+
+  <view class="cu-item">
+
+
+    <text>手机号：</text>
+
+
+
+    <input class="text-grey" placeholder='请填写手机号' bindinput='getPhoneNumber'value='{{ypRequestInfo.phoneNumber}}'></input>
+
+
+  </view>
+  <view class="cu-item">
+    <text>微信号：</text>
+    <input class="text-grey" placeholder='请填写微信号' bindinput='getWechatNumber' value='{{ypRequestInfo.wechatNumber}}'></input>
+  </view>
+  <view class="cu-item arrow">
+    <picker mode="date" value="{{ypRequestInfo.hopeTime}}" start="1970-01-01" end="2020-09-01" bindchange="DateChange">
+      <text>期望拍摄时间：</text>
+      <text class="text-gray">{{ypRequestInfo.hopeTime}}</text>
+    </picker>
+  </view>
+  <view class="cu-item arrow">
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <text>身份：</text>
+      <text class="text-gray"> {{ypRequestInfo.auth}}</text>
+    </picker>
+  </view>
+</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg block" loading='{{loading}}' disabled='{{disabled}}' type="" bindtap='submitAf'>{{title}}</button>
+</view>

@@ -1,0 +1,17 @@
+/* pages/lanuch/work/work.wxss */
+.weui-cells:before {
+  border-top:none;
+}
+
+
+.weui-cells:after {
+  bottom: 0;
+  border-bottom: none;
+}
+#deleteTag{
+  opacity: 0.9;
+  position: relative;
+  bottom: 80px;
+  left:50px;
+  z-index: 99;
+}

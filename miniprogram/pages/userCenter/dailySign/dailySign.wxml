@@ -1,0 +1,10 @@
+<!--pages/userCenter/dailySign /dailySign .wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">每日签到</view>
+</cu-custom>
+<view class='bg-white'>
+  <calendar cur-year="{{curYear}}" cur-month="{{curMonth}}" day="{{day}}" header_show="{{header_show}}" prev="{{prev}}" next="{{next}}" active-coloro="active-coloro" custom switchover="{{switchover}}" bindselectDate="sign" speciallist='{{speciallist}}'
+    txt_style='txt_style' isTodaybtn='{{true}}' todaybtn-style='todaybtn-style' todaybtn_txt='{{todaybtn_txt}}' remark_show="{{remark_show}}" weekheight='{{120}}' active-colort='active-colort' remark_style='{{remark_style}}' userdefined_style='userdefined_style'
+    counttxt_style='counttxt_style ' countber_style='countber_style' count_txt_user="{{count_txt_user}}"  bindnextMonth='nextMonth' bindprevMonth='prevMonth' />
+</view>

@@ -1,0 +1,79 @@
+<!--pages/index/detail/detail.wxml-->
+<cu-custom bgImage="http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的约拍详情</view>
+</cu-custom>
+<view class='page'> <view class='page__bd bg-white'>
+    <view class="weui-panel weui-panel_access" id='firstList'>
+      <view class="weui-panel__bd" bindtap='openHome' >
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{ypDetail.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{ypDetail.nickName}}
+              <image src='/images/icons/man.png' style="margin-left: 5px;width:16px; height:16px;"></image>
+            </view>
+            <view class="weui-media-box__title" id="launchTime">{{ypDetail.launchTime}}发布</view>
+          </view>
+        </view>
+
+      </view>
+      <view class="weui-article" bindtap='openDetail'>
+        <view class="weui-article__section">
+          <view class="weui-article__h3">{{ypDetail.price}}</view>
+          <view class="weui-article__p">{{ypDetail.explain}}</view>
+        </view>
+        <view class='bg-white' wx:for="{{ypDetail.imgList}}" wx:key><image class='img' mode='widthFix' src='{{item}}' catchtap='previewImage' data-src='{{item}}'></image></view>
+        <view>
+          <view class='allTag'>
+          <view wx:for="{{ypDetail.tagList}}" wx:for-item="tagItem" wx:key="*this" class='placeholder'># {{tagItem}}</view>
+        </view>
+        </view>
+        <view class='location'> <image src='/images/icons/location.png'></image>{{ypDetail.cameraArea}}</view>
+        <view class='message'>阅读6</view>
+        <view class='message'>收到约拍0</view>
+      </view>
+    </view>
+  </view><view class="cu-bar bg-white tabbar border shop">
+    <button class="action" open-type="contact" show-message-card="{{true}}">
+      <view class="icon-service">
+        <view class="cu-tag badge"></view>
+      </view>
+      客服
+    </button>
+    <view class="action text-{{isAdd?'orange':'black'}}" bindtap='add'>
+      <view class="icon-{{isAdd?'favorfill':'favor'}}"></view>{{isAdd?'已收藏':'收藏'}}
+    </view>
+    <button class="action" open-type='share'>
+      <view class="icon-forward">
+      </view>
+      分享
+    </button>
+     <view class="bg-blue submit" bindtap='af' >{{title}}</view>
+  </view></view>
+
+   <view class="cu-modal {{autoCheck?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">智能推荐约拍对象</view>
+    </view>
+    <view class="padding-lg bg-white flex justify-center" >
+     <view id='people'class="cu-avatar round xl bg-blue" ><text class='icon-search text-white'></text></view>
+    <view id='preloader'>
+    <view id='loader'></view>
+    </view>
+    </view>
+    <view class="cu-bar bg-white justify-center">
+      <view class="action">
+        <button class="cu-btn line-blue text-blue" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-blue margin-left-lg" bindtap="start">开始匹配</button>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+

@@ -1,0 +1,22 @@
+<!--miniprogram/pages/divide/divideDetail.wxml-->
+<cu-custom  bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+ <view slot="backText">返回</view>
+  <view slot="content">{{divideName}}类摄影精选</view>
+</cu-custom>
+<view class='bg-white radius shadow-warp margin-top' wx:for="{{goodList}}" wx:key="index" bindtap='openHomePage'>
+      <view class="flex  justify-center padding-top-sm">
+        <view class="cu-avatar xl round " style="background-image:url({{item.avatarUrl}});"></view>
+      </view>
+       <view class="flex padding-bottom-xs justify-center">
+        <text>{{item.username}}</text>
+      </view>
+      <view class="flex justify-center">
+      <view class="bg-white padding-sm ">{{item.auth}}</view>
+      <view class="bg-white padding-sm "><text class='icon-location text-blue'></text>{{item.college}}</view>
+      <view class="bg-white padding-sm ">{{item.age}}岁</view>
+    </view>
+     
+      <view class="flex padding-bottom justify-center">
+      <button class=' cu-btn line-blue icon-friendaddfill padding-left-sm padding-right-sm margin-right-sm'  catchtap='yp' data-index='{{index}}'>邀请约拍</button>  <button class=' cu-btn  icon-{{item.isAdd?"":"add"}} padding-left-sm padding-right-sm ' style='background-color:#9AC2FF;color:white;' catchtap='add' data-index='{{index}}'>{{item.isAdd?'已关注':'关注'}}</button>
+      </view>
+    </view>

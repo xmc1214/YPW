@@ -1,0 +1,4 @@
+<!--miniprogram/pages/activities/activities.wxml-->
+<cu-custom bgImage="http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg">
+  <view slot="content">活动</view>
+</cu-custom>

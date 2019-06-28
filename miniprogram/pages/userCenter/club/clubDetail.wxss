@@ -1,0 +1,4 @@
+/* pages/userCenter/club/clubDetail.wxss */
+#bgtitle{
+  margin-top:5rpx;
+}

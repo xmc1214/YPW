@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class=" bg-img padding-tb-xl" style="background-image: url('https://s2.ax1x.com/2019/05/20/EvhHKI.png');height:100vh;">
+  <view class="flex padding justify-center margin-top-lg" style='margin-top:200rpx;'>
+    <image src='/images/1.png' style='width:20%;' mode="widthFix"></image>
+  </view>
+  <view class="flex justify-center">
+    <text class='text-xl text-white'>悦拍屋</text>
+  </view>
+  <view class=" justify-start text-white margin-top-xl text-xl " id='title1'>
+    <view class="padding">放心拍，随心拍</view>
+  </view>
+   <view class=" justify-end text-white text-xl " id='title2'>
+    <view class="padding text-blue">镜头记录点滴美好</view>
+  </view>
+  <view class="padding flex justify-center radius " id="title3">
+    <button class="cu-btn bg-skyBlue  margin-tb-sm lg solid s" style="width:400rpx;" open-type="getUserInfo" bindgetuserinfo='getuserinfo' loading='{{loading}}' lang="zh_CN">{{message}}</button>
+  </view>
+</view>

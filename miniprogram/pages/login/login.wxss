@@ -1,0 +1,16 @@
+/* pages/login/login.wxss */
+#title1{
+  position: fixed;
+  bottom: 50%;
+  left: 5%;
+}
+#title2{
+    position: fixed;
+  bottom: 20%;
+  right: 0;
+}
+#title3{
+    position: fixed;
+  bottom: 5%;
+  right: 20%;
+}

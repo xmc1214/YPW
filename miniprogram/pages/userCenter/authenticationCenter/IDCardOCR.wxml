@@ -1,0 +1,9 @@
+<!--miniprogram/pages/userCenter/authenticationCenter/IDCardOCR.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">身份证认证</view>
+</cu-custom>
+<ocr
+    mode="IDCardOCR"
+    bindfinish="handleFinish"
+  />

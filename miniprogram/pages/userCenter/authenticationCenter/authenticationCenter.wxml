@@ -1,0 +1,63 @@
+<!--pages/userCenter/authenticationCenter/authenticationCenter.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">认证中心</view>
+</cu-custom>
+<!-- <view class="cu-form-group margin-top">
+ <text class="icon-safe lg text-blue"></text>
+    <view class="title padding-left-xs">认证方式</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+       {{picker[index]}}
+      </view>
+    </picker>
+  </view> -->
+<view class="cu-list menu sm-border card-menu "style='margin-top:30%;'>
+  <view class='cu-item arrow'>
+    <picker  bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+       <text class="icon-safe lg text-blue"></text>
+    <text class="title padding-left-sm">认证方式：{{picker[index]}}</text>
+    </picker>
+  </view>
+  <view class="cu-item">
+    <text class="icon-news lg text-blue"></text>
+    <view class="title padding-left-sm">证件号码：</view>
+    <text>身份证</text>
+  </view>
+  <view class="cu-item">
+    <text class="icon-my lg text-blue"></text>
+    <view class="title padding-left-sm">真实姓名：</view>
+    <input placeholder="必填" bindinput='getRealName'></input>
+  </view>
+  <view class="cu-item">
+     <text class="icon-keyboard lg text-blue"></text>
+    <view class="title padding-left-sm">证件号码：</view>
+    <input placeholder="必填" bindinput='getAuthNumber'></input>
+  </view>
+  <view class='bg-white'><view class="padding">
+  <view class="text-start padding-top">温馨提示：目前认证方式仅支持拍照上传身份证</view>
+  <button class="cu-btn block bg-skyBlue margin-tb-lg lg " bindtap='submit'>提交</button>
+
+</view></view>
+</view>
+ <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    认证前请认真
+阅读并同意<navigator url="/pages/readme/readme" class="weui-agree__link">《相关条款》</navigator>
+                </view>
+            </label>
+        </checkbox-group>
+<!-- <view class="cu-form-group">
+ <text class="icon-news lg text-blue"></text>
+    <view class="title padding-left-xs">证件类型：</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+       {{picker[index]}}
+      </view>
+    </picker>
+  </view> -->

@@ -1,0 +1,64 @@
+<!--pages/userCenter/club/clubDetail.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">俱乐部会员</view>
+</cu-custom>
+<view class='page'>
+       <view class="flex justify-center" id="bgtitle">
+    <image src='/images/vipTest.png' mode='widthFix' style='width:100%'></image>
+    </view>
+     <view class="cu-list menu sm-border card-menu margin-top">
+     <view class="cu-item" wx:for="{{vipList}}"wx:key="index" bindtap='buyVip' data-item='{{item}}'>
+      <view class="content">
+        <image src="/images/VIP1.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">俱乐部会员x</text>
+        <text class="  text-xxl padding-xs text-gray">{{item.number}}</text>
+      <text class="text-grey">个月</text>
+      </view>
+       <view class="action">
+       <view class=" text-xxl padding">
+        <text class="text-price text-red">{{item.price}}.00</text>
+      </view>
+       </view>
+    </view>
+     </view>
+      <view class=" padding ">
+    <view class="grid col-1   bg-white">
+    <view class="text-center padding text-lg">--俱乐部会员专享特权--</view>
+      <view class=" padding-left padding-top text-sm" wx:for="{{messageList}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+    </view>
+    <view class="cu-modal {{isShow?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">开通俱乐部会员</view>
+      <view class="action" bindtap="hideModal">
+        <text class="icon-close text-red"></text>
+      </view>
+    </view>
+    
+         <view class="cu-list menu sm-border card-menu margin">
+     <view class="cu-item">
+      <view class="content">
+        <image src="/images/VIP1.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">俱乐部会员x</text>
+        <text class="  text-xxl padding-xs text-gray">{{vipInfo.number}}</text>
+      <text class="text-grey">个月</text>
+      </view>
+       <view class="action">
+       <view class=" text-xxl padding">
+        <text class="text-price text-red">{{vipInfo.price}}.00</text>
+      </view>
+       </view>
+    </view>
+     </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-blue text-blue" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-blue margin-left" bindtap="payForVip">立即支付</button>
+
+      </view>
+    </view>
+  </view>
+</view>

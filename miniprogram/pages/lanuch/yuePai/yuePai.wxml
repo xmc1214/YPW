@@ -1,0 +1,124 @@
+<!--pages/lanuch/yuePai/yuePai.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}" style="z-index:99;">
+  <view slot="backText">返回</view>
+  <view slot="content">发布约拍</view>
+</cu-custom>
+<view class='padding' style="padding-bottom:5px;">
+  <view class="cu-form-group">
+    <textarea class="weui-textarea" placeholder="输入约拍说明" style="height: 6em" value='{{explain}}' bindinput='getExplain'></textarea>
+  </view>
+   <view class="weui-cells" >
+            <view class="weui-cell">
+              <view class="weui-cell__bd">
+                <view class="weui-uploader">
+                  <view class="weui-uploader__hd">
+                    <view class="weui-uploader__title">图片上传</view>
+                    <view class="weui-uploader__info">{{files.length}}/{{maximage}}</view>
+                  </view>
+                  <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                      <block wx:for="{{files}}" wx:key="*this">
+                        <view class="weui-uploader__file " bindtap="previewImage" id="{{item}}">
+                        
+                          <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                           <view class="cu-tag bg-gray" id="deleteTag"catchtap="DelImg" data-index="{{index}}">
+          <text class="icon-close"></text>
+        </view>
+                        </view>
+                         
+                      </block>
+                    </view>
+                    <view class="weui-uploader__input-box">
+                      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                      
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+</view>
+<view class="cu-list menu sm-border card-menu " style='border-radius:0;margin-top:0;'>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>地区</text>
+    </view>
+    <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey"> {{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+   <view class="cu-item arrow">
+    <view class="content">
+
+      <text>要求</text>
+    </view>
+    <picker bindchange="requirePickerChange" value="{{requireindex}}" range="{{requirePicker}}">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey"> {{require}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>费用</text>
+    </view>
+    <picker bindchange="pricePickerChange" value="{{priceindex}}" range="{{pricePicker}}">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey"> {{price}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>拍摄地点</text>
+    </view>
+    <picker bindchange="areaPickerChange" value="{{areaindex}}" range="{{areaPicker}}">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey"> {{cameraArea}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="cu-item ">
+    <view class="content">
+
+      <button class='cu-btn round line bordersize-blue icon-add text-blue' style='height:30px;' bindtap='openTagList'>标签</button>
+    </view>
+
+  </view>
+</view>
+<view class="cu-modal bottom-modal {{isShow}}" bindtap="hideModal">
+  <view class="cu-dialog" >
+    <view class="cu-bar bg-white">
+      <view class="action text-grey" catchtap="hideModal">取消</view>
+      <view class="action text-blue" catchtap="selected">确定</view>
+    </view>
+    <view class="grid col-2 padding-sm">
+      <view wx:for="{{checkbox}}" class="padding-sm" wx:key="{{index}}">
+        <button class="cu-btn blue lg block {{item.checked?'bg-blue':'line-blue'}}" catchtap="ChooseCheckbox" data-value="{{item.value}}"> {{item.name}}
+          <view class=" margin-left-xs cu-tag sm round {{item.checked?'bg-white text-blue':'bg-blue'}}" wx:if="{{item.hot}}" >HOT</view>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue lg" loading='{{loading}}' bindtap='launch'>{{title}}</button>
+</view>
+ 

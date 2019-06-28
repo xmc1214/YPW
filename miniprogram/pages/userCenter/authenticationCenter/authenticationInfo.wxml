@@ -1,0 +1,49 @@
+<!--miniprogram/pages/userCenter/authenticationCenter/authenticationInfo.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">认证信息档案</view>
+</cu-custom>
+<view class="cu-list menu sm-border card-menu " style='margin-top:20%;'>
+<view class="  flex  padding justify-center  bg-blue">
+  <view class="cu-avatar xl round margin-left" style="background-image:url({{userInfo.avatarUrl}});"></view>
+</view>
+  <view class='cu-item'>
+    <view class="content">
+      <text class="icon-safe text-blue"></text>
+      <text class="text-grey">认证方式：身份证识别</text>
+    </view>
+    </view>
+     <view class='cu-item '>
+    <view class="content">
+      <text class="icon-myfill text-blue"></text>
+      <text class="text-grey">真实姓名：{{authInfo.Name}}</text>
+    </view>
+    </view>
+     <view class='cu-item '>
+    <view class="content">
+      <text class="icon-friendfill text-blue"></text>
+      <text class="text-grey">性别：{{authInfo.Sex}}</text>
+    </view>
+    </view>
+    <view class='cu-item '>
+    <view class="content">
+      <text class="icon-crownfill text-blue"></text>
+      <text class="text-grey">出生日期：{{authInfo.Birth}}</text>
+    </view>
+    </view>
+    <view class='cu-item '>
+    <view class="content text-cut">
+      <text class="icon-locationfill text-blue"></text>
+      <text class="text-grey">详细地址：{{authInfo.Address}}</text>
+    </view>
+    </view>
+    <view class='cu-item '>
+    <view class="content">
+      <text class="icon-card text-blue"></text>
+      <text class="text-grey">身份证号：{{authInfo.IdNum}}</text>
+    </view>
+    </view>
+  </view>
+  <view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue lg">重新认证</button>
+</view>

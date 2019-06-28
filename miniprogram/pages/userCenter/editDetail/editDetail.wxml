@@ -1,0 +1,211 @@
+<!--pages/editDetail/editDetail.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">编辑资料</view>
+</cu-custom>
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>头像</text>
+    </view>
+    <view class="action">
+      <view class="cu-avatar-group">
+        <view class="cu-avatar round sm" style="background-image:url({{userInfo.avatarUrl}});"></view>
+      </view>
+    </view>
+
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>昵称</text>
+    </view>
+    <view class="action">
+      <view class="content">
+
+        <text class="text-grey">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>性别</text>
+    </view>
+    <view class="action">
+      <view class="content">
+
+        <text class="text-grey">{{userInfo.gender == 1?'男':'女'}}</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>生日</text>
+    </view>
+    <picker mode="date" value="{{date}}" start="1970-01-01" end="2020-09-01" bindchange="DateChange">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey">{{date}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>地区</text>
+    </view>
+    <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey"> {{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+
+
+  <view class="cu-item arrow">
+    <view class="content">
+
+      <text>身份</text>
+    </view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="action">
+        <view class="content">
+
+          <text class="text-grey"> {{auth}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="cu-item arrow" bindtap='openEdit' data-idx='{{1}}'>
+    <view class="content">
+
+      <text>年龄/身高/体重</text>
+    </view>
+    <view class="action">
+      <view class="content">
+
+        <text class="text-grey">{{age}}/{{height}}/{{weight}}</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="cu-item arrow" bindtap='openEdit' data-idx='{{2}}'>
+    <view class="content">
+
+      <text>兴趣爱好</text>
+    </view>
+    <view class="action">
+      <view class="content">
+
+        <text class="text-grey">{{hobby}}</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="cu-item arrow" bindtap='openEdit' data-idx='{{3}}'>
+    <view class="content">
+
+      <text>手机号</text>
+    </view>
+    <view class="action">
+      <view class="content">
+
+        <text class="text-grey">{{phoneNumber}}</text>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg block" loading='{{loading}}' disabled='{{disabled}}' type="" bindtap='editDetail'>{{title}}</button>
+</view>
+<view class="cu-modal {{isShow}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">年龄/身高/体重</view>
+      <view class="action" bindtap="goback" data-idx='{{1}}'>
+        <text class="icon-close text-red"></text>
+      </view>
+    </view>
+    <view class="flex flex-wrap justify-center">
+      <view class="cu-form-group margin-top basis-xl solid-bottom">
+        <view class="title">年龄</view>
+        <input placeholder="请输入年龄"bindinput='getAge'></input>
+      </view>
+      <view class="basis-df"></view>
+      <view class="cu-form-group  basis-xl">
+        <view class="title">身高</view>
+        <input placeholder="请输入身高" bindinput='getHeight'></input>
+      </view>
+      <view class="basis-df"></view>
+      <view class="cu-form-group margin-bottom basis-xl">
+        <view class="title">体重</view>
+        <input placeholder="请输入体重"bindinput='getWeight' ></input>
+      </view>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+    <view class="action">
+      <button class="cu-btn line-blue text-blue" bindtap="goback" data-idx='{{1}}'>取消</button>
+      <button class="cu-btn bg-blue margin-left" bindtap="hideModal" data-idx='{{1}}'>确定</button>
+    </view>
+  </view>
+  </view>
+</view>
+<view class="cu-modal {{isShow1}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">兴趣爱好</view>
+      <view class="action" bindtap="goback" data-idx='{{2}}'>
+        <text class="icon-close text-red"></text>
+      </view>
+    </view>
+    <view class="flex flex-wrap justify-center">
+      <view class="cu-form-group margin-top basis-xl solid-bottom margin-bottom">
+        <view class="title">兴趣爱好</view>
+        <input placeholder="请输入兴趣爱好"bindinput='getHobby'></input>
+      </view>
+   
+  </view>
+   <view class="cu-bar bg-white justify-end">
+    <view class="action">
+      <button class="cu-btn line-blue text-blue" bindtap="goback" data-idx='{{2}}'>取消</button>
+      <button class="cu-btn bg-blue margin-left" bindtap="hideModal" data-idx='{{2}}'>确定</button>
+    </view>
+  </view>
+</view>
+</view>
+<view class="cu-modal {{isShow2}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">手机号</view>
+      <view class="action" bindtap="goback" data-idx='{{3}}'>
+        <text class="icon-close text-red"></text>
+      </view>
+    </view>
+    <view class="flex flex-wrap justify-center">
+      <view class="cu-form-group margin-top basis-xl solid-bottom margin-bottom">
+        <view class="title">手机号</view>
+        <input placeholder="请输入手机号"bindinput='getPhoneNumber'></input>
+      </view>
+    
+  </view>
+  <view class="cu-bar bg-white justify-end">
+    <view class="action">
+      <button class="cu-btn line-blue text-blue"bindtap="goback" data-idx='{{3}}'>取消</button>
+      <button class="cu-btn bg-blue margin-left" bindtap="hideModal" data-idx='{{3}}'>确定</button>
+    </view>
+  </view>
+</view>
+</view>

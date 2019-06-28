@@ -1,0 +1,33 @@
+/* miniprogram/pages/message/sendInvite/inviteDetail.wxss */
+.change{
+  animation: send 3s linear infinite;
+  opacity: 0;
+  
+}
+
+@keyframes send{
+25%{
+  left:300rpx;
+  bottom: 0px;
+ /* transform: rotate(0deg); */
+   opacity:0;
+
+}
+62.5%{
+  left: 150rpx;
+  bottom: 20px;
+ /* transform: rotate(180deg); */
+   opacity: 1;
+
+}
+
+100%{
+   left: 0rpx;
+  bottom: 0px;
+   /* transform: rotate(360deg); */
+    opacity: 0;
+
+}
+}
+
+

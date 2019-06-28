@@ -1,0 +1,75 @@
+/* pages/collect/collect.wxss */
+.text-xl{
+  text-align: center;
+  padding-top: 10%;
+}
+
+.page__bd{
+   padding-bottom: 10px;
+}
+
+
+
+#launchTime{
+  color: #CCCCCC;
+  font-size: 14px;
+}
+.weui-media-box__thumb{
+ border: 1px solid beige;
+  border-radius: 50%;
+}
+.allTag{
+display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+.placeholder{
+ 
+    margin:5px 20px 2px 5px;
+    margin-top: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: white;
+    height: 1.5em;
+    line-height: 1.5em;
+    color: #333;
+    border: 1px solid #97B2FF;
+   float: left;
+    border-radius: 30rpx;
+    font-size: 12px; 
+  
+}
+
+.weui-grid__icon{
+  width: 220rpx;
+  height:220rpx;
+}
+.location{
+  float: left;
+  font-size: 12px;
+  margin-top:10px;
+  display: block;
+}
+.message{
+  float: right;
+   font-size: 12px;
+   margin-left: 20px;
+   margin-top:10px;
+}
+.location image{
+  width: 16px;
+  height: 16px;
+}
+#firstList{
+  margin-top: -15px;
+  border: none;
+}
+#Loading{
+ position: fixed;
+ top: 40vh;
+ left: 0;
+ right: 0;
+  z-index: 1000
+ 
+}

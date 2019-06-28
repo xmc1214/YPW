@@ -1,0 +1,23 @@
+<!--pages/message/senInvite/sendInvite.wxml-->
+<cu-custom  bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+ <view slot="backText">返回</view>
+  <view slot="content">发出的邀请</view>
+</cu-custom>
+ <view class="cu-list menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{requestList}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" catchtap="openDetail" data-item='{{item}}'>
+      <view class="cu-avatar round lg bg-blue" ><text class='icon-friendfavor text-white'></text></view>
+      <view class="content">
+        <view class="text-grey">{{item.nickName}}</view>
+        <view class="text-gray text-sm text-cut">
+         约拍理由：{{item.explain}}</view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">{{item.launchTime}}</view>
+      </view>
+      <view class="move">
+        <view class="bg-grey">置顶</view>
+        <view class="bg-red" catchtap='deleteMessage' data-index='{{index}}'>删除</view>
+      </view>
+    </view>
+    </view>
+   

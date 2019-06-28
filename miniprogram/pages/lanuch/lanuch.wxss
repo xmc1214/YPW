@@ -1,0 +1,4 @@
+/* pages/lanuch/lanuch.wxss */
+.img{
+  width:100%;
+}

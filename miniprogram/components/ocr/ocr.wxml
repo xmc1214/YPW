@@ -1,0 +1,40 @@
+<ocr>
+ <view class="cu-card case margin-top">
+  <view class="margin-bottom shadow">
+    <view class=' flex justify-center'>
+      <image src="{{fileID}}" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>
+<view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-start">
+      <view class="solid-bottom text-df padding">温馨提示：为确保正常识别请提供真实拍摄的身份证原件，无反光，无水印，身份证尽量充满图片，文字清晰可见，图片格式为jpg、jpeg、bmp、png，大小不超过1Mb</view>
+    </view>
+  </view>
+  <view class="button-container">
+      <button
+       
+        bindtap="handleUploadTap"
+      >
+        {{uploadText}}
+      </button>
+      <button
+        disabled="{{!hasUploaded}}"
+        bindtap="handleRecognizeTap"
+      >
+        {{recognizeText}}
+      </button>
+  </view>
+  <!-- 身份证信息 -->
+    <!-- <view class="result" wx:if="{{result}}">
+      <view class="weui-cells__title">识别结果：</view>
+      <view class="weui-cells">
+        <view class="weui-cell" wx:for="{{result}}" wx:key="*this" wx:for-index="key" wx:if="{{ idcardResMap[key] && item }}">
+            <view class="weui-cell__bd">
+                <p>{{ idcardResMap[key].label }}</p>
+            </view>
+            <view class="weui-cell__ft">{{ idcardResMap[key].valMap['item'] || item }}</view>
+        </view>
+      </view>
+    </view> -->
+</ocr>

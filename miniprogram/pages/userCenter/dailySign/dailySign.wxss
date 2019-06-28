@@ -1,0 +1,43 @@
+/* pages/userCenter/dailySign /dailySign .wxss */
+.txt_style{
+  background-color: #0081ff;
+  color:white;
+}
+.active-coloro {
+  color: #fff;
+  background: #0081ff;
+}
+
+.todaybtn-style{
+  background-color: #0081ff !important;
+  color:white !important;
+}
+ .active-colort {
+    color: var(--blue);
+    background: #cce6ff;
+  }
+  /* 备注信息为headline样式  */
+.userdefined_style{
+   flex-direction: column;
+  align-items: center;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left:30rpx;
+  margin-right:30rpx;
+}
+  /*key的样式*/
+.counttxt_style{
+  color: #333;
+}
+/*vuale的样式*/
+.countber_style{
+  color: var(--blue);
+}
+/* 出勤  */
+.dotcolor-o{
+    background-color: #188be4 !important;  
+}
+/* 未出勤  */
+.dotcolor-t{
+    background-color: #FF7F50 !important;  
+}

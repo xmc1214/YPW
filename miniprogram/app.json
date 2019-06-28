@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/activities/activities",
+    "pages/lanuch/lanuch",
+    "pages/message/message",
+    "pages/userCenter/userCenter",
+    "pages/message/getInvite/getInvite",
+    "pages/message/sendInvite/sendInvite",
+    "pages/userCenter/personal/personal",
+    "pages/userCenter/editDetail/editDetail",
+    "pages/userCenter/dailySign/dailySign",
+    "pages/userCenter/activityManage/activityManage",
+    "pages/userCenter/club/clubDetail",
+    "pages/userCenter/authenticationCenter/authenticationCenter",
+    "pages/userCenter/collect/collect",
+    "pages/userCenter/advice/advice",
+    "pages/homePage/homePage",
+    "pages/index/detail/detail",
+    "pages/index/pickYou/pickYou",
+    "pages/lanuch/yuePai/yuePai",
+    "pages/lanuch/work/work",
+    "pages/divide/divide",
+    "pages/userCenter/authenticationCenter/IDCardOCR",
+    "pages/userCenter/authenticationCenter/authenticationInfo",
+    "pages/userCenter/myLaunch/myLaunch",
+    "pages/divide/divideDetail",
+    "pages/message/getInvite/inviteDetail",
+    "pages/message/sendInvite/inviteDetail",
+    "pages/message/sendInvite/test",
+    "pages/index/detail/myDetail",
+    "pages/index/detail/checkResult",
+    "pages/readme/readme"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#5397ff",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/selectedhome.png"
+      },
+      {
+        "pagePath": "pages/divide/divide",
+        "text": "分类",
+        "iconPath": "images/icons/fenlei.png",
+        "selectedIconPath": "images/icons/selectedfenlei.png"
+      },
+      {
+        "pagePath": "pages/lanuch/lanuch",
+        "text": "发布",
+        "iconPath": "images/icons/selectedfabu.png",
+        "selectedIconPath": "images/icons/selectedfabu.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/icons/message.png",
+        "selectedIconPath": "images/icons/selectedmessage.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "我的",
+        "iconPath": "images/icons/lianxiren.png",
+        "selectedIconPath": "images/icons/selectedlianxiren.png"
+      }
+    ]
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.2.1",
+      "provider": "wx23a9cef3522e4f7c"
+    }
+  },
+  "resizable": true,
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,68 @@
+<!--miniprogram/pages/message/sendInvite/inviteDetail.wxml-->
+<!--miniprogram/pages/message/getInvite/inviteDetail.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">邀请详情</view>
+</cu-custom>
+<view class='padding-xl  padding-bottom-xm bg-white '>
+  <view>
+    <view class="cu-avatar xl round " style="background-image:url({{userInfo.avatarUrl}});float:left;">
+
+    </view>
+    <image class="change" src="/images/icons/youjian.png" mode='widthFix' style="width:96rpx;"></image>
+    <view class="cu-avatar xl round " style="background-image:url({{otherInfo.avatarUrl}});float:right;">
+    </view>
+  </view>
+</view>
+
+<view class="flex  bg-white">
+  <view class="  flex-sub  padding-left-xl margin-left-sm text-left">{{userInfo.nickName}}</view>
+  <view class=" flex-sub padding-right-xl text-right margin-right-sm">{{otherInfo.nickName}}</view>
+</view>
+<view class="cu-list menu sm-border margin-top-xs">
+  <view class='cu-item '>
+    <view class="content">
+      <view class='text-cut text-gray'>
+        <text class="icon-discoverfill text-blue padding-right-xs"></text>
+        <text class='text-black'> 邀请时间：</text>{{sendDetail.launchTime}}</view>
+    </view>
+  </view>
+  <view class='cu-item'>
+    <view class="content">
+
+      <view class='text-cut text-gray'>
+        <text class="icon-formfill text-blue padding-right-xs"></text>
+        <text class='text-black'>约拍理由：</text>{{sendDetail.explain}}</view>
+    </view>
+  </view>
+  <view class='cu-item '>
+    <view class="content">
+      <view class='text-cut text-gray'>
+        <text class="icon-timefill text-blue padding-right-xs"></text>
+        <text class='text-black'>期望拍摄时间：</text>{{sendDetail.hopeTime}}</view>
+
+    </view>
+  </view>
+  <view class='cu-item '>
+    <view class="content">
+      <view class='text-cut text-gray'>
+        <text class="icon-dianhua text-blue padding-right-xs"></text>
+        <text class='text-black'>手机号码：</text>{{sendDetail.phoneNumber}}</view>
+
+    </view>
+  </view>
+  <view class='cu-item '>
+    <view class="content">
+      <view class='text-cut text-gray'>
+        <text class="icon-weixin text-blue padding-right-xs"></text>
+        <text class='text-black'>微信号：</text>{{sendDetail.wechatNumber}}</view>
+
+    </view>
+  </view>
+</view>
+<view class="padding flex bg-white">
+  <button class=" flex-sub cu-btn line-blue lg margin-right-xs" bindtap='refuse'>
+    <text class='icon-close text-blue'></text>拒绝邀请</button>
+  <button class=" flex-sub cu-btn bg-blue lg margin-left-xs" bindtap='confirm'>
+    <text class='icon-check text-white'></text>接受邀请</button>
+</view>

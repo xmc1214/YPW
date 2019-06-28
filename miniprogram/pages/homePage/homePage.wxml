@@ -1,0 +1,103 @@
+<!--pages/homePage/homePage.wxml-->
+<view class='page'>
+  <view class='page__bd'>
+    <view class="bg-img padding-tb-xl" style="background-image:url(http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg);height:400rpx;">
+      <view class="cu-bar">
+        <view class="action">
+          <text class="icon-back text-white" bindtap='goback'></text>
+          <text class=" text-white" bindtap='goback'>返回</text>
+        </view>
+        <view class="content text-bold text-white">
+          {{userInfo.nickName}}的主页
+        </view>
+      </view>
+      <view class="flex justify-center">
+
+        <view class="cu-avatar xl round " style="background-image:url({{userInfo.avatarUrl}});z-index:99;"></view>
+      </view>
+      <view class=" text-white padding text-center">{{userInfo.nickName}}</view>
+    </view>
+    <view class="shadow-blur">
+      <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-black response" style="height:100rpx;margin-top:-100rpx;"></image>
+    </view>
+    <view class='bg-white text-gray'>
+      <view class="flex justify-center">
+        <view class="bg-white padding-sm ">{{userInfo.auth}}</view>
+        <view class="bg-white padding-sm ">
+          <text class='icon-location text-blue'></text>{{userInfo.city}}</view>
+        <view class="bg-white padding-sm ">{{userInfo.age}}岁</view>
+      </view>
+      <view class="flex justify-center">
+        <button class=' padding-left-xl padding-right-xl  cu-btn line-{{color}} round shadow' id="diy" bindtap='foncus'>{{message}}</button>
+      </view>
+    </view>
+    <view class="grid col-3 margin-bottom-xs text-center text-gray">
+      <view class="bg-white padding " wx:for="{{messageList}}" wx:key>{{item.name}} {{item.badge}}</view>
+    </view>
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class='page'>
+            <view class='page__bd'>
+              <view class="weui-panel weui-panel_access" wx:for="{{ypList}}" wx:key>
+
+                <view class="weui-article" bindtap='openDetail' data-item='{{item}}'>
+                  <view class="weui-article__section">
+                    <view class="weui-article__h3">{{item.price}}</view>
+                    <view class="weui-article__p">{{item.explain}}</view>
+                  </view>
+                  <view class="weui-flex grid-square">
+                    <view class="weui-flex__item" wx:for="{{item.imgList}}" wx:key="idx" wx:for-item="imgItem" wx:for-index="idx">
+                      <image src='{{imgItem}}' class="weui-grid__icon" mode='aspectFill' catchtap='previewImage' data-src='{{imgItem}}' data-imageList='{{item.imgList}}'></image>
+                    </view>
+
+                  </view>
+                  <view class='allTag'>
+                    <view wx:for="{{item.tagList}}" wx:for-item="tagItem" wx:key="*this" class='placeholder'># {{tagItem}}</view>
+                  </view>
+                  <view class='location'>
+                    <image src='/images/icons/location.png'></image>来自{{item.cameraArea}}</view>
+                  <view class='message'>阅读{{item.readNumber}}</view>
+                  <view class='message'>收到约拍{{item.getInvite}}</view>
+                </view>
+
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class='page'>
+            <view class='page__bd'>
+              <view class="weui-panel weui-panel_access" wx:for="{{workList}}" wx:key>
+
+                <view class="weui-article">
+                  <view class="weui-article__section">
+                    <view class="weui-article__p">{{item.explain}}</view>
+                  </view>
+                  <view class="weui-flex grid-square">
+                    <view class="weui-flex__item" wx:for="{{item.imgList}}" wx:key="idx" wx:for-item="imgItem" wx:for-index="idx">
+                      <image src='{{imgItem}}' class="weui-grid__icon" mode='aspectFill' catchtap='previewImage' data-src='{{imgItem}}' data-imageList='{{item.imgList}}'></image>
+                    </view>
+
+                  </view>
+                  <view class='allTag'>
+                    <view wx:for="{{item.tagList}}" wx:for-item="tagItem" wx:key="*this" class='placeholder'># {{tagItem}}</view>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

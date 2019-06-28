@@ -1,0 +1,8 @@
+<!--pages/lanuch/lanuch.wxml-->
+<cu-custom bgImage="http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg">
+  <view slot="content">发布</view>
+</cu-custom>
+<view class='margin-top'></view>
+<view class="padding-xs {{toggleDelay?'animation-slide-bottom':''}}" style="animation-delay: {{item.time}}s;" wx:for="{{list}}" wx:key="{{index}}" bindtap='openLaunch' data-item="{{item}}">
+  <image class="img" id='img{{index}}' src="{{item.src}}" mode="widthFix" />
+</view>

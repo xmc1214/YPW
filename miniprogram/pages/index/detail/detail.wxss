@@ -1,0 +1,89 @@
+/* pages/index/detail/detail.wxss */
+.text-xl{
+  text-align: center;
+  padding-top: 10%;
+}
+.page__bd{
+   padding-bottom: 10px;
+}
+.userinfo {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   justify-content: space-between;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.allTag{
+display: block;
+	clear: both;
+	overflow: hidden;
+}
+#launchTime{
+  color: #CCCCCC;
+  font-size: 14px;
+}
+.weui-media-box__thumb{
+ border: 1px solid beige;
+  border-radius: 50%;
+}
+.placeholder{
+ 
+    margin:5px 20px 2px 5px;
+    margin-top: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: white;
+    height: 1.5em;
+    line-height: 1.5em;
+    color: #333;
+    border: 1px solid #97B2FF;
+    float: left;
+    border-radius: 30rpx;
+    font-size: 12px;
+}
+
+.weui-grid__icon{
+  width: 220rpx;
+  height:220rpx;
+}
+.location{
+  float: left;
+  font-size: 12px;
+  margin-top:10px;
+}
+.message{
+  float: right;
+   font-size: 12px;
+   margin-left: 20px;
+   margin-top:10px;
+}
+.location image{
+  width: 16px;
+  height: 16px;
+}
+#firstList{
+  margin-top: 0px;
+  border: none;
+}
+.img{
+  width: 100%
+}
+/* .cu-modal{
+  background:rgba(0, 0, 0, 0);
+
+} */

@@ -1,0 +1,45 @@
+<!--pages/collect/collect.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的收藏</view>
+</cu-custom>
+<view class='page__bd'>
+    <view class="weui-panel weui-panel_access"  wx:for="{{collectList}}" wx:key>
+      <view class="weui-panel__bd" bindtap='openHome' data-item='{{item}}'>
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.nickName}}
+              <image src='{{item.gender?"/images/icons/man.png":"/images/icons/woman.png"}}' style="margin-left: 5px;width:32rpx;" mode='widthFix'></image>
+            </view>
+            <view class="weui-media-box__title" id="launchTime">{{item.launchTime}}发布</view>
+          </view>
+        </view>
+
+      </view>
+      <view class="weui-article" bindtap='openDetail' data-item='{{item}}'>
+        <view class="weui-article__section">
+          <view class="weui-article__h3">{{item.price}}</view>
+          <view class="weui-article__p">{{item.explain}}</view>
+        </view>
+        <view class="weui-flex grid-square">
+          <view class="weui-flex__item" wx:for="{{item.imgList}}" wx:key="idx" wx:for-item="imgItem" wx:for-index="idx">
+            <image src='{{imgItem}}' class="weui-grid__icon" mode='aspectFill' catchtap='previewImage' data-src='{{imgItem}}' data-imageList='{{item.imgList}}'></image>
+          </view>
+
+        </view>
+        <view class='allTag'>
+          <view wx:for="{{item.tagList}}" wx:for-item="tagItem" wx:key="*this" class='placeholder'># {{tagItem}}</view>
+        </view>
+        <view class='location'>
+          <image src='/images/icons/location.png'></image>来自{{item.cameraArea}}</view>
+        <view class='message'>阅读{{item.readNumber}}</view>
+        <view class='message'>收到约拍{{item.getInvite}}</view>
+      </view>
+
+    </view>
+  </view>
+
+

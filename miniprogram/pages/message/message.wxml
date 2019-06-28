@@ -1,0 +1,28 @@
+<!--pages/message/message.wxml-->
+<cu-custom bgImage="http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg" >
+  <view slot="content">消息</view>
+</cu-custom>
+<view class='page'>
+  <view class='page__bd'>
+   <view class='cu-list menu'>
+  <view class="cu-item">
+      <navigator class="content" hover-class="none" url="/pages/message/getInvite/getInvite">
+        <text class="icon-notice text-blue"></text>
+        <text class="text-grey">收到的约拍邀请</text>
+      </navigator>
+    </view>
+    <view class="cu-item">
+      <navigator class="content" hover-class="none" url="/pages/message/sendInvite/sendInvite">
+        <text class="icon-pullup text-blue"></text>
+        <text class="text-grey">发出的约拍邀请</text>
+      </navigator>
+    </view>
+    <view class="cu-item">
+      <view class="content" hover-class="none" bindtap='getQingQiu'>
+        <text class="icon-tag text-blue"></text>
+        <text class="text-grey">收到的报名请求</text>
+      </view>
+    </view>
+  </view>
+  </view>
+</view>

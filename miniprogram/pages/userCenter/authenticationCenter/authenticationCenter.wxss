@@ -1,0 +1,4 @@
+/* pages/userCenter/authenticationCenter/authenticationCenter.wxss */
+.cu-list.menu>.cu-item{
+  justify-content:left;
+}

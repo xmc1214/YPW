@@ -1,0 +1,37 @@
+/* pages/activities/activities.wxss */
+.screen-swiper{
+min-height:450rpx;
+}
+	.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+  #tilte{
+    margin-top:85%;
+    opacity: 0.7;
+    background: #f0f7ff;
+color: #2e3649;
+/* margin-top:50%; */
+  }
+ 
+  .placeholder{
+    margin: 5px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.placeholder1{
+  margin: 5px;
+  margin-top: 0;
+    text-align: center;
+ 
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #9AC2FF;
+}
+
+.weui-grid__icon{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 100rpx;
+}

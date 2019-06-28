@@ -1,0 +1,100 @@
+<!--pages/userCenter/userCenter.wxml-->
+<loading hidden="{{hidden}}">
+  加载中...
+</loading>
+<cu-custom bgImage="http://wx4.sinaimg.cn/mw690/006UdlVNgy1g2v2t1ih8jj31hc0p0qej.jpg">
+  <view slot="content">用户中心</view>
+</cu-custom>
+<view class='page'>
+  <view class='page__bd'>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <navigator url="/pages/prompt/certification" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{userInfo.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{userInfo.nickName}}
+              <image src='{{userInfo.gender == 1?"/images/icons/man.png":"/images/icons/woman.png"}}' style="margin-left: 5px;width:16px; height:16px;"></image>
+  <view class="weui-media-box__title" style="color:{{userInfo.isAuth?'#5397ff':'red'}};font-size:14px;">{{userInfo.isAuth?'已认证':'未认证'}}</view>
+            </view>
+          </view>
+        </navigator>
+
+      </view>
+    </view>
+      <view class="cu-bar bg-white solid-bottom margin-top-xs">
+  </view>
+  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'no-border':''}}">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}" bindtap="openSomething" data-name="{{item.name}}" data-url="{{item.url}}">
+      <view class="icon-{{item.icon}} text-{{item.color}}">
+        <view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+          <block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
+        </view>
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class='cu-list menu'>
+  <navigator class="cu-item arrow" hover-class="none" url='{{userInfo.isAuth?"/pages/userCenter/authenticationCenter/authenticationInfo":"/pages/userCenter/authenticationCenter/authenticationCenter"}}' open-type="navigate">
+      <view class="content">
+        <text class="icon-safe text-blue"></text>
+        <text class="text-grey">认证中心</text>
+      </view>
+       <view class="action">
+         <view class="content">
+        
+        <text class="text-grey">{{userInfo.isAuth?'已认证':'前往认证'}}</text>
+      </view>
+      </view>
+    </navigator>
+    <navigator class="cu-item arrow" hover-class="none" url="/pages/userCenter/club/clubDetail" open-type="navigate">
+      <view class="content">
+        <text class="icon-vip text-blue"></text>
+        <text class="text-grey">加入俱乐部</text>
+      </view>
+       <view class="action">
+         <view class="content">
+        
+        <text class="text-grey">享受多项特权</text>
+      </view>
+      </view>
+    </navigator>
+    <navigator class="cu-item arrow" hover-class="none" url="/pages/userCenter/activityManage/activityManage" open-type="navigate">
+      <view class="content" >
+        <text class="icon-tag text-blue"></text>
+        <text class="text-grey">活动管理</text>
+      </view>
+       <view class="action">
+         <view class="content">
+        
+        <text class="text-grey">管理发布的活动</text>
+      </view>
+      </view>
+    </navigator>
+    <navigator class="cu-item arrow" hover-class="none" url="/pages/userCenter/dailySign/dailySign" open-type="navigate">
+      <view class="content" >
+        <text class="icon-squarecheck text-blue"></text>
+        <text class="text-grey">每日签到</text>
+        
+      </view>
+       <view class="action">
+         <view class="content">
+        
+        <text class="text-grey">签到可送一次邀约</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+   <view class="cu-modal bottom-modal {{isShow== true ?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-blue" bindtap="hideModal">取消</view>
+    </view>
+    <view class="padding-xl">
+    <button open-type='share' class=" radius shadow-warp bg-white margin-top text-blue">分享至微信好友或群聊</button>
+    </view>
+  </view>
+</view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+/* pages/message/senInvite/sendInvite.wxss */
+
+/* .loader {
+  text-indent: -9999em;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  background: linear-gradient(to right, #fff 10%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.2);
+  -webkit-animation: load-effect 2s infinite linear;
+  animation: load-effect 2s infinite linear;
+}
+
+.loader::before{
+   position: absolute;
+   content: '';
+   width: 50%;
+   height: 50%;
+   background: #FFF;
+   border-radius: 100% 0 0 0;
+   left: 0;
+   top: 0;
+}
+.loader::after{
+  background: #4ea980;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+}
+@keyframes load-effect {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+} */

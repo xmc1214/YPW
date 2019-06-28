@@ -1,0 +1,47 @@
+<!--pages/userCenter/advice/advice.wxml-->
+<cu-custom bgImage="https://s2.ax1x.com/2019/05/02/Etiyng.jpg" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">建议反馈</view>
+</cu-custom>
+  <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+        <view class='page__bd'>
+          <view class="weui-cells__title">建议反馈</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">
+                <textarea class="weui-textarea" placeholder="您的宝贵建议对我们很重要" style="height: 6em" bindinput='check' value='{{message}}' />
+                <view class="weui-textarea-counter">{{currentNumber}}/{{max}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-cells">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">
+                <view class="weui-uploader">
+                  <view class="weui-uploader__hd">
+                    <view class="weui-uploader__title">图片上传</view>
+                    <view class="weui-uploader__info">{{files.length}}/{{maximage}}</view>
+                  </view>
+                  <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                      <block wx:for="{{files}}" wx:key="*this">
+                        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                          <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                        </view>
+                      </block>
+                    </view>
+                    <view class="weui-uploader__input-box">
+                      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+         
+          <view class="padding flex flex-direction">
+   <button class="cu-btn bg-blue margin-tb-sm lg" disabled='{{hasInput}}' bindtap='submit' type="">提交</button>
+</view>
+        </view>
+      </view>
+
